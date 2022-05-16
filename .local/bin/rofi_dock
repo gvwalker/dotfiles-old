@@ -1,0 +1,15 @@
+#!/bin/bash
+
+NCMPCPP=""
+TERMINAL=""
+CODE="﬏"
+THUNAR=""
+FIREFOX=""
+
+RES=`echo "$NCMPCPP|$TERMINAL|$CODE|$THUNAR|$FIREFOX" | rofi -dmenu -sep "|" -theme dock -monitor -1`
+
+[[ $RES == $NCMPCPP ]] && cantata
+[[ $RES == $TERMINAL ]] && alacritty
+[[ $RES == $CODE ]] && code
+[[ $RES == $THUNAR ]] && nautilus
+[[ $RES == $FIREFOX ]] && brave

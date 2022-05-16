@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+yt-dlp --cookies-from-browser BRAVE -f m4a --add-metadata -o "%(playlist_index)s %(artist)s - %(track)s.m4a" $1

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+MESSAGE="What do you want to do "${USER^}"?"
+POWER="⏻"
+RESTART="屢"
+LOGOUT=""
+LOCK=""
+RES=`echo "$LOCK|$LOGOUT|$RESTART|$POWER" | rofi -dmenu -p "$MESSAGE" -sep "|" -theme powermenu -monitor -1`
+[ "$RES" = "$POWER" ] && mpc pause && wmctrl -lix|cut -d ' ' -f 1 |xargs -i% wmctrl -i -c % && sleep 0.2 && systemctl poweroff
+[ "$RES" = "$RESTART" ] && mpc pause && wmctrl -lix|cut -d ' ' -f 1 |xargs -i% wmctrl -i -c % && sleep 0.2 && systemctl reboot
+[ "$RES" = "$LOGOUT" ] && mpc pause && wmctrl -lix|cut -d ' ' -f 1 |xargs -i% wmctrl -i -c % && sleep 0.2 && loginctl kill-user ${USER}
+[ "$RES" = "$LOCK" ] && mpc pause && sleep 0.2 && betterlockscreen -l dimblur

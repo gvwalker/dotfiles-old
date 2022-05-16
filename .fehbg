@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/grant/Pictures/wallpapers/jase-bloor-oCZHIa1D4EU-unsplash.jpg' 
