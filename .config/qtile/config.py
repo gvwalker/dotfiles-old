@@ -13,7 +13,7 @@ from libqtile.lazy import lazy
 mod = "mod4"  # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"  # My terminal of choice
 myBrowser = "google-chrome-stable"  # My browser of choice
-myFileBrowser = "nautilus"  # My file browser of choice
+myFileBrowser = "dolphin"  # My file browser of choice
 
 keys = [
     ### The essentials
@@ -240,6 +240,8 @@ groups = [
                  x = 0.25,
                  height=0.5,
                  width=0.5,
+                 on_focus_lost_hide=False,
+                 warp_pointer=True,
                  ),
         DropDown("terminal",
                  myTerm,
@@ -248,6 +250,8 @@ groups = [
                  x = 0.25,
                  height = 0.5,
                  width = 0.5,
+                 on_focus_lost_hide=True,
+                 warp_pointer=True,
                  ),
     ]),
 ]
